@@ -1,0 +1,68 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileConnector", "FileConnector\FileConnector.csproj", "{8F553E86-4A45-4D33-8AB3-64D542094932}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileConnectorKeyGen", "FileConnectorKeyGen\FileConnectorKeyGen.csproj", "{9A895722-A529-4016-A620-CA15436A63EF}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FileConnectorCommon", "FileConnectorCommon\FileConnectorCommon.shproj", "{E393FBB5-61B7-4E4E-9DB0-1C36332A10BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{826A8B95-6724-4C8B-9DBB-8530E42E5B52}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\images\agent-clear-remote-memory-0buffer-logs.png = Docs\images\agent-clear-remote-memory-0buffer-logs.png
+		Docs\images\agent-context-activation.png = Docs\images\agent-context-activation.png
+		Docs\images\agent-get-logs.png = Docs\images\agent-get-logs.png
+		Docs\images\agent-load-exec-policy.png = Docs\images\agent-load-exec-policy.png
+		Docs\images\agent-minimal-embedded-policy.png = Docs\images\agent-minimal-embedded-policy.png
+		Docs\images\agent-reveal-message.png = Docs\images\agent-reveal-message.png
+		Docs\images\agent-running.png = Docs\images\agent-running.png
+		Docs\images\agent-sent-policy-output.png = Docs\images\agent-sent-policy-output.png
+		Docs\images\agent-set-masterkey.png = Docs\images\agent-set-masterkey.png
+		Docs\images\agent-terminated.png = Docs\images\agent-terminated.png
+		Docs\images\agent-unhide-message.png = Docs\images\agent-unhide-message.png
+		Docs\images\agent-up-verbosity-memory.png = Docs\images\agent-up-verbosity-memory.png
+		Docs\Operations\Agent.md = Docs\Operations\Agent.md
+		Docs\images\asset-encrypted.png = Docs\images\asset-encrypted.png
+		Docs\images\base-running.png = Docs\images\base-running.png
+		Docs\Operations\Base.md = Docs\Operations\Base.md
+		Docs\images\embed-policy.png = Docs\images\embed-policy.png
+		Docs\Operations\IPC.md = Docs\Operations\IPC.md
+		Docs\Operations\OpSec.md = Docs\Operations\OpSec.md
+		Docs\Operations\Pollcy.md = Docs\Operations\Pollcy.md
+		Docs\images\predictive-command-help.png = Docs\images\predictive-command-help.png
+		Docs\README.md = Docs\README.md
+		Docs\RNS.drawio = Docs\RNS.drawio
+		Docs\images\RNS.png = Docs\images\RNS.png
+		Docs\Operations\TODO.md = Docs\Operations\TODO.md
+		Docs\Operations\Utilities.md = Docs\Operations\Utilities.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		FileConnectorCommon\FileConnectorCommon.projitems*{8f553e86-4a45-4d33-8ab3-64d542094932}*SharedItemsImports = 4
+		FileConnectorCommon\FileConnectorCommon.projitems*{9a895722-a529-4016-a620-ca15436a63ef}*SharedItemsImports = 4
+		FileConnectorCommon\FileConnectorCommon.projitems*{e393fbb5-61b7-4e4e-9db0-1c36332a10bb}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F553E86-4A45-4D33-8AB3-64D542094932}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F553E86-4A45-4D33-8AB3-64D542094932}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F553E86-4A45-4D33-8AB3-64D542094932}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F553E86-4A45-4D33-8AB3-64D542094932}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A895722-A529-4016-A620-CA15436A63EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A895722-A529-4016-A620-CA15436A63EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A895722-A529-4016-A620-CA15436A63EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A895722-A529-4016-A620-CA15436A63EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B92A7BEE-DFF9-4699-BEF7-99F969319674}
+	EndGlobalSection
+EndGlobal

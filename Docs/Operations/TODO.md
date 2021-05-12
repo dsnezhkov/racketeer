@@ -1,0 +1,5 @@
+- Public key crypto
+- server discovery, fallback, progressive timeouts
+- Web UI
+- IPC client
+- module loading for exec

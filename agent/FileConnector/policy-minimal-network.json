@@ -1,0 +1,58 @@
+{
+    "OpMode": 2,
+    "ExtEndpoints": [
+        {
+            "Ident": "Base1",
+            "Base": "localhost:3001",
+            "Proto": "HTTP",
+            "TLS": true,
+            "Profile": {
+                "Interval": 5,
+            },
+            "Timeout": 3,
+        },
+        {
+            "Ident": "Base2",
+            "Base": "localhost:3000",
+            "Proto": "HTTP",
+            "TLS": false,
+            "Profile": {
+                "Interval": 10,
+            },
+            "Timeout": 5,
+        }
+    ],
+    "ExtComm": {
+        "As": "Base1",
+        "Contracts": {
+            "task":{
+                "Resource": "/task",
+                "Request": { 
+                    "Method": 1
+                }
+            },
+            "heartbeat":{
+                "Resource": "/heartbeat",
+                "Response": { 
+                    "Method": 2
+                }
+            },
+            "summary":{
+                "Resource": "/summary",
+                "Response": { 
+                    "Method": 2
+                }
+            },
+            "getlogs":{
+                "Resource": "/getlogs",
+                "Response": { 
+                    "Method": 2
+                }
+            }
+        }
+    },
+    "Keys": {
+        "MasterKey": "$RNS$V1$10000$8LIbLgrCtk66pBiDKvYhwpFwvzpYKz6jWaUGh9kV89jIJwOL",
+        "SiteID": "2e1bb2f0-c20a-4eb6-baa4-18832af621c2"
+    }
+}

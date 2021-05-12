@@ -1,0 +1,14 @@
+Command Type: {{ $.CommandType }}
+OpSecTraits: {{ $.OpSecTraits }}
+
+Master Key is a password used to :
+- unlock sensitive fields of the policy, e.g. shielded credentials
+- it is used as a verification key to access and run loaded policy.
+
+*Opsec notes: Master Key is stored in a protected field in memory
+and gets temporarily unwrapped at the time of the policy run.
+However, it remains is in the dropper's memory after execution of the policy.
+This may change in the future (i.e. zeroization after each run).
+
+It is preferred to set the master key as close to the run as possible to avoid
+possible leak during defensive memory scans
