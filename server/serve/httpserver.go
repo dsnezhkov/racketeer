@@ -10,7 +10,8 @@ import (
 	"path/filepath"
 )
 
-func StartHttpServer(serverType types.HttpServerType) {
+
+func StartHttpServer(serverType types.HttpServerType, hostP *string, portP *string) {
 
 	//Create the default router
 	router := chi.NewRouter()
@@ -19,24 +20,18 @@ func StartHttpServer(serverType types.HttpServerType) {
 		AllowedMethods: []string{"GET", "POST"},
 	}))
 	routers.CommsRouter(router, &agentChannelsOut, &agentPendingList, &agentActiveStats)
-	serverPlain := &http.Server{
-		Addr:    "127.0.0.1:3000",
-		Handler: router,
-	}
-	serverSecure := &http.Server{
-		Addr:    "127.0.0.1:3001",
+
+	agentServer := &http.Server{
+		Addr:   *hostP + ":" + *portP,
 		Handler: router,
 	}
 
 	//Create the server.
 	switch serverType {
 	case types.Plain:
-		go startHTTPServer(serverPlain)
+		go startHTTPServer(agentServer)
 	case types.Secure:
-		go startHTTPSServer(serverSecure)
-	case types.Both:
-		go startHTTPServer(serverPlain)
-		go startHTTPSServer(serverSecure)
+		go startHTTPSServer(agentServer)
 	default:
 		fmt.Println("Invalid HTTP server type")
 	}
@@ -44,16 +39,16 @@ func StartHttpServer(serverType types.HttpServerType) {
 }
 
 func startHTTPSServer(s *http.Server) {
-	fmt.Println("Starting HTTPS Server")
-	cert := filepath.FromSlash("dist/server.crt")
-	key := filepath.FromSlash("dist/server.key")
+	fmt.Println("Starting HTTP/S Server - " + s.Addr)
+	cert := filepath.FromSlash("keys/server.crt")
+	key := filepath.FromSlash("keys/server.key")
 	err := s.ListenAndServeTLS(cert, key)
 	if err != nil {
-		println("Error : {0}", err)
+		println("Error : ", err)
 	}
 }
 func startHTTPServer(s *http.Server) {
-	fmt.Println("Starting HTTP Server")
+	fmt.Println("Starting HTTP Server - " + s.Addr)
 	err := s.ListenAndServe()
 	if err != nil {
 		println("Error : {0}", err)
