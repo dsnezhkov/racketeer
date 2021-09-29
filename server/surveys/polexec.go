@@ -5,7 +5,7 @@ import (
 	"RNS/utils"
 	"errors"
 	"fmt"
-	"github.com/AlecAivazis/survey"
+	"github.com/AlecAivazis/survey/v2"
 	"io/ioutil"
 	"path/filepath"
 )
@@ -20,7 +20,7 @@ func PolExecSurvey(task *types.TaskCommandRequestOutbound) error {
 		Message: "Choose source of payload:",
 		Options: []string{"editor", "file"},
 	}
-	_ = survey.AskOne(payloadQS, &payloadAS)
+	_ = survey.AskOne(payloadQS, &payloadAS, nil)
 
 	switch payloadAS {
 	case "editor":
@@ -30,7 +30,7 @@ func PolExecSurvey(task *types.TaskCommandRequestOutbound) error {
 			FileName: "*.txt",
 		}
 
-		_ = survey.AskOne(payloadEQ, &payloadEA)
+		_ = survey.AskOne(payloadEQ, &payloadEA, nil)
 		fmt.Printf("Content received: %s", payloadEA)
 		if payloadEA == "" {
 			payload = payloadEA
@@ -44,8 +44,9 @@ func PolExecSurvey(task *types.TaskCommandRequestOutbound) error {
 				files, _ := filepath.Glob(toComplete + "*")
 				return files
 			},
+			Help: "Select policy file",
 		}
-		_ = survey.AskOne(payloadFQ, &payloadFA)
+		_ = survey.AskOne(payloadFQ, &payloadFA, nil)
 		fmt.Printf("Processing paylaod from file: %s\n", payloadFA)
 		payloadFAC, err := ioutil.ReadFile(payloadFA)
 		if err != nil {
@@ -67,7 +68,7 @@ func PolExecSurvey(task *types.TaskCommandRequestOutbound) error {
 	approveQ := &survey.Confirm{
 		Message: "OK to send?",
 	}
-	_ = survey.AskOne(approveQ, &approveA)
+	_ = survey.AskOne(approveQ, &approveA, nil)
 
 	if approveA == true {
 		task.TaskType = 2

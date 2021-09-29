@@ -212,6 +212,6 @@ Terminate remote agent
 # Dev/Build
 
 
-`cd racketeer\RNS; export GOPATH=/path`
+`cd racketeer\RNS; set GOPATH=/path`
 `go get -d ./...`
-`go build -o server.exe`
+`go build -o bin\server.exe`

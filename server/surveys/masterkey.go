@@ -5,7 +5,7 @@ import (
 	"RNS/types"
 	"RNS/utils"
 	"fmt"
-	"github.com/AlecAivazis/survey"
+	"github.com/AlecAivazis/survey/v2"
 )
 
 func MasterKeySurvey(task *types.TaskCommandRequestOutbound) error {
@@ -19,7 +19,7 @@ func MasterKeySurvey(task *types.TaskCommandRequestOutbound) error {
 		Help: help.MasterKeyHelp(),
 	}
 
-	err = survey.AskOne(masterKeyQ, &masterKey)
+	err = survey.AskOne(masterKeyQ, &masterKey, nil)
 	if err != nil {
 		return err
 	}
@@ -35,7 +35,7 @@ func MasterKeySurvey(task *types.TaskCommandRequestOutbound) error {
 	approveQ := &survey.Confirm{
 		Message: "OK to send?",
 	}
-	_ = survey.AskOne(approveQ, &approveA)
+	_ = survey.AskOne(approveQ, &approveA, nil)
 
 	if approveA == true {
 		task.TaskType = 2
