@@ -208,3 +208,10 @@ Terminate remote agent
 - [Asset encryption](../images/asset-encrypted.png)
 - [Agent embedded policy - lights out](../images/embed-policy.png)
 - [Operator help system](../images/predictive-command-help.png)
+
+# Dev/Build
+
+
+`cd racketeer\RNS; export GOPATH=/path`
+`go get -d ./...`
+`go build -o server.exe`
