@@ -210,8 +210,13 @@ Terminate remote agent
 - [Operator help system](../images/predictive-command-help.png)
 
 # Dev/Build
+Prerequisites:
+- Reasonably latest Golang dist (16+)
+- You should have `export GOROOT` pointing to GO SDK (e.g. `/usr/local/go-17.1/`).
+- You should have `export GOPATH` pointing to where your Go workspace (e.g. `/User/dev/go`)
 
+Compile code:
+1. Clone the repo: `got clone <this repo path>`
+2. Navigate to the server component: `cd racketeer/server`
+3. Build the code: `GO111MODULE=on go build -o bin/server.exe`
 
-`cd racketeer\RNS; set GOPATH=/path`
-`go get -d ./...`
-`go build -o bin\server.exe`
