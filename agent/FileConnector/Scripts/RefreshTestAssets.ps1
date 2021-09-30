@@ -1,4 +1,4 @@
-﻿$topDir = "C:\Users\dimsne01\Downloads\Share"
+﻿$topDir = "C:\Users\dev\Share"
 $assetStash = "${topDir}\assets"
 
 Get-ChildItem -Path  ${topDir} -File | Remove-Item 

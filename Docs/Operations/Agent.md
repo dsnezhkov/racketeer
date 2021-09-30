@@ -75,4 +75,22 @@ Example:
 2021.02.21 11:25:33.949 Debug   Using Ident: Base1 for comms
 2021.02.21 11:25:33.949 Debug   localhost:3001 (TSL: True) comms
 ```
- 
+
+# Build / Dev
+
+Dependencies: 
+```
+PM> Get-Package
+
+Id                                  Versions                                 ProjectName                                                                                                                                                                                               
+--                                  --------                                 -----------                                                                                                                                                                                               
+CommandLineParser                   {2.8.0}                                  FileConnectorKeyGen                                                                                                                                                                                       
+Costura.Fody                        {4.1.0}                                  FileConnectorKeyGen                                                                                                                                                                                       
+Fody                                {6.0.0}                                  FileConnectorKeyGen                                                                                                                                                                                       
+NLog                                {4.7.7}                                  FileConnectorKeyGen                                                                                                                                                                                       
+ObjectDumper                        {1.0.0.12}                               FileConnectorKeyGen                                                                                                                                                                                       
+CommandLineParser                   {2.8.0}                                  FileConnector                                                                                                                                                                                             
+Costura.Fody                        {4.1.0}                                  FileConnector                                                                                                                                                                                             
+Fody                                {6.0.0}                                  FileConnector                                                                                                                                                                                             
+Newtonsoft.Json                     {12.0.3}                                 FileConnector     
+```
