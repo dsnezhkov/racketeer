@@ -10,7 +10,6 @@ import (
 	"path/filepath"
 )
 
-
 func StartHttpServer(serverType types.HttpServerType, hostP *string, portP *string) {
 
 	//Create the default router
@@ -22,7 +21,7 @@ func StartHttpServer(serverType types.HttpServerType, hostP *string, portP *stri
 	routers.CommsRouter(router, &agentChannelsOut, &agentPendingList, &agentActiveStats)
 
 	agentServer := &http.Server{
-		Addr:   *hostP + ":" + *portP,
+		Addr:    *hostP + ":" + *portP,
 		Handler: router,
 	}
 
@@ -44,7 +43,7 @@ func startHTTPSServer(s *http.Server) {
 	key := filepath.FromSlash("keys/server.key")
 	err := s.ListenAndServeTLS(cert, key)
 	if err != nil {
-		println("Error : ", err)
+		println("Unable to start HTTPS server. Check port and/or that the TLS key `server.key` and ithe cert `server.crt` are found in `keys     folder` ? Eror: {0} ", err)
 	}
 }
 func startHTTPServer(s *http.Server) {
@@ -52,5 +51,6 @@ func startHTTPServer(s *http.Server) {
 	err := s.ListenAndServe()
 	if err != nil {
 		println("Error : {0}", err)
+		println("Unable to start HTTP server. Check port? Eror: {0} ", err)
 	}
 }
