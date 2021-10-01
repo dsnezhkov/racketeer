@@ -1,0 +1,147 @@
+{
+    "OpMode": 2,
+    "ExtEndpoints": [
+        {
+            "Ident": "Base1",
+            "Base": "localhost:3001",
+            "Proto": "HTTP",
+            "TLS": true,
+            "Profile": {
+                "Interval": 5
+            },
+            "Timeout": 3
+        },
+        {
+            "Ident": "Base2",
+            "Base": "localhost:3000",
+            "Proto": "HTTP",
+            "TLS": false,
+            "Profile": {
+                "Interval": 10
+            },
+            "Timeout": 5
+        }
+    ],
+    "ExtComm": {
+        "As": "Base1",
+        "Contracts": {
+            "task":{
+                "Resource": "/task",
+                "Request": { 
+                    "Method": 1
+                }
+            },
+            "heartbeat":{
+                "Resource": "/heartbeat",
+                "Response": { 
+                    "Method": 2
+                }
+            },
+            "summary":{
+                "Resource": "/summary",
+                "Response": { 
+                    "Method": 2
+                }
+            },
+            "getlogs":{
+                "Resource": "/getlogs",
+                "Response": { 
+                    "Method": 2
+                }
+            }
+        }
+    },
+    "Keys": {
+        "MasterKey": "$RNS$V1$10000$8LIbLgrCtk66pBiDKvYhwpFwvzpYKz6jWaUGh9kV89jIJwOL",
+        "SiteID": "2e1bb2f0-c20a-4eb6-baa4-18832af621c2"
+    },
+    "AuthN": [ 
+        {
+            "Ident": "Acct1",
+            "Type":  3,
+            "Domain": "NA.DOMAIN.DOMAIN.COM", 
+            "User": "dev", 
+            "Password": "cJ049sGLNGtjsM+uyGXh4HDSHos="
+        },
+        {
+            "Ident": "Acct2",
+            "Type":  3,
+            "Domain": "NA.DOMAIN.DOMAIN.COM", 
+            "User": "dev", 
+            "Password": "cJ049sGLNGtjsM+uyGXh4HDSHos="
+        },
+        {
+            "Ident": "Local",
+            "Type":  1,
+            "Domain": "", 
+            "User": "", 
+            "Password": ""
+        },
+        {
+            "Ident": "Self",
+            "Type":  2,
+            "Domain": "", 
+            "User": "", 
+            "Password": ""
+        }
+    ], 
+    "Hosts":[
+        {
+            "Ident": "HostA",
+            "Name": "PC-X0874", 
+            "As": "Local",
+            "Operation": 1,
+            "Key": "f34febd0-2774-4829-96a6-aadbf5398ab3",
+            "Files": [
+                {
+                    "FilePath": "/Users/dev/Downloads/Share/file5.log", 
+                    "Operation": 1,
+                    "Key": "9993c359-c58a-4c11-8cd0-f4c4695be28f"
+                },
+                {
+                    "FilePath": "X:/file6.log", 
+                    "Operation": 1,
+                    "Key": "88888359-c58a-4c11-8cd0-f4c4695be28f"
+                }
+            ]
+        },
+        {
+            "Ident": "HostB",
+            "Name": "PC-X0874", 
+            "As": "Self",
+            "Operation": 1,
+            "Key": "7149e694-511c-4a89-b3b6-95372471f498",
+            "Files": [
+                {
+                    "FilePath": "/Share/file1.log", 
+                    "Operation": 1,
+                    "Key": ""
+                },
+                {
+                    "FilePath": "\\Share\\file2.log", 
+                    "Operation": 1,
+                    "Key": "6fd3c359-c58a-4c11-8cd0-f4c4695be28f"
+                },
+                {
+                    "FilePath": "\\Share\\file4.log", 
+                    "Operation": 1,
+                    "Key": "6fd3c359-c58a-4c11-8cd0-f4c4695be28f"
+                }
+            ]
+        },
+        {
+            "Ident": "HostC",
+            "Name": "PC-X0874", 
+            "As": "Local",
+            "Operation": 1,
+            "Key": "f34febd0-2774-4829-96a6-aadbf5398ab3",
+            "Files": [
+                {
+                    "FilePath": "C:/Users/dev/Downloads/Share/file3.log", 
+                    "Operation": 1,
+                    "Key": ""
+                }
+            ]
+        }
+    ]
+}
