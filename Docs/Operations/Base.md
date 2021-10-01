@@ -9,9 +9,12 @@
 
 ## Operation
 
+Run:
 ```
-$ runbase
+$ server -H 127.0.0.1 -P 3001 -s 
 ```
+This will start server on IP/Port with TLS
+_Note_ Please make sure that there has to be a `keys` folder right next to the server executable which contains TLS certs. In the future there will be an option to point to correct directory with keys.
 
 List checked in agents:
 - Active : accepted for interaction
