@@ -1,4 +1,4 @@
-# Racketeer Project - Ransomware emulation toolkit
+# Racketeer Project - Ransomware simulation toolkit
 
 The goal of this project is to provide a way for teams to simulate and test detection of common ransomware operation, in a controlled manner, against a set of company assets and network endpoints. 
 
