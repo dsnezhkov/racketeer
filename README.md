@@ -12,11 +12,11 @@ The Racketeer toolkit operates on an agent/base model and currently supports Win
 See [Architecture](images/RNS.png)
 
 Read more:
-- [Agent](Operations/Agent.md)
-- [Base](Operations/Base.md)
+- [Agent](Docs/Operations/Agent.md)
+- [Base](Docs/Operations/Base.md)
 
 ## Operational security
-See [OpSec](Operations/OpSec.md)
+See [OpSec](Docs/Operations/OpSec.md)
 
 ## Utilities
-See [Utilities](Operations/Utilities.md)
+See [Utilities](Docs/Operations/Utilities.md)
