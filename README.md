@@ -9,7 +9,7 @@ The Racketeer toolkit operates on an agent/base model and currently supports Win
 
 
 ## Architecture diagram
-See [Architecture](images/RNS.png)
+See [Architecture](Docs/images/RNS.png)
 
 Read more:
 - [Agent](Docs/Operations/Agent.md)
